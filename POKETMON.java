@@ -12,30 +12,35 @@ import java.util.Map;
 import java.util.Scanner;
 
 public class POKETMON {
+	static int arr_n[];
+	static int arr_m[];
+	static int n,m;
+	static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 	
+	public static int stoi(String num) {
+		return Integer.parseInt(num);
+	}
+	
+	public static void input() {
+		
+		String str_n = br.readLine();
+
+		for(int index = 0; index < n ; index++) {
+		}
+	}
 	
 	public static void main(String[] args) throws Exception {
-		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		
-		String str = br.readLine();
-		String str_list[] = str.split(" ");
-		int N = Integer.parseInt(str_list[0]);
-		int M = Integer.parseInt(str_list[1]);
+		String tc = br.readLine();
+		int test = Integer.parseInt(tc);
+		String nm =br.readLine();
+		String num[] = nm.split(" ");
+		n = stoi(num[0]);
+		m = stoi(num[1]);
+		arr_n = new int[n];
+		arr_m = new int[m];
 		
-		Map<String, String> m = new HashMap<>();
-		
-		for(int index = 1 ; index <= N ; index++) {
-			String poketmon = br.readLine();
-			m.put(poketmon, Integer.toString(index));
-			m.put(Integer.toString(index) , poketmon);
-		}
-		
-		for(int index = 1; index <=M ; index++) {
-			String Query = br.readLine();
-			System.out.println(m.get(Query));
-		}
-		
-		
+		input();
 		
 	}
 
