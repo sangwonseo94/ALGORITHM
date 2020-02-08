@@ -11,6 +11,7 @@ public class 경사로 {
 		StringTokenizer st = new StringTokenizer(br.readLine());
 		int N = Integer.parseInt(st.nextToken());
 		int L = Integer.parseInt(st.nextToken());
+		int answer =0;
 		int map[][] = new int[2*N][N];
 		
 		for(int y=0;y <N ;y++) {
@@ -20,16 +21,15 @@ public class 경사로 {
 			}
 		}
 		int copy[][] = new int[N][N];
-		
+		// 기존 배열을 90도 회전시켜 배열 아래에 붙여서 행의 값만 증가시켜서 한번에 확인한다.
 		for(int y=0;y <N ;y++) {
 			for(int x= 0 , i = N-1; x< N; x++ , i--) {
 				map[N+y][x] = map[i][y];
 			}
 		}
-		int answer =0;
+		
 		for(int y = 0 ; y < 2*N ; y++) {
-			boolean visit[] = new boolean[N];
-			boolean can = true;
+			boolean visit[] = new boolean[N]; boolean can = true;
 			int now =map[y][0];
 			top:
 			for(int x=1; x < N ; x++) {
@@ -41,17 +41,19 @@ public class 경사로 {
 					//오르막 경사
 					if(x-L <0) {
 						can = false; break top;
-					}
+					}// 범위를 벗어난 경우
 					for(int k = x -L ; k < x;k++) {
 						if(now != map[y][k] || visit[k]) {
 							can = false; break top;
 						}
 					}
+					// 이전에 사용했던 경우
 					if(can) {
 						for(int k = x -L ; k < x;k++) {
 							visit[k] = true;
 						}
 						now = map[y][x];
+					// 경사로를 놓는다.
 					}
 				}
 				if(now-1== map[y][x]) {
@@ -67,7 +69,6 @@ public class 경사로 {
 						for(int k = x ; k < x+L;k++) {
 							visit[k] = true;
 						}
-						
 						now = map[y][x];
 					}
 				}
