@@ -1,11 +1,11 @@
-package practice;
+package í‘¼ë¬¸ì œ;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.util.Arrays;
 import java.util.StringTokenizer;
 
-public class ½ºÀ§Ä¡ {
+public class ï¿½ï¿½ï¿½ï¿½Ä¡ {
 
 	public static void main(String[] args) throws Exception{
 	

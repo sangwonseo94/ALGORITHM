@@ -1,4 +1,4 @@
-package practice;
+package í‘¼ë¬¸ì œ;
 
 import java.io.BufferedReader;
 import java.io.FileInputStream;
@@ -6,10 +6,10 @@ import java.io.InputStreamReader;
 import java.util.Arrays;
 import java.util.StringTokenizer;
 
-public class ´ë·®¼¼ÀÏ {
+public class ï¿½ë·®ï¿½ï¿½ï¿½ï¿½ {
 	static int answer = 0;
 	public static void main(String[] args) throws Exception {
-		System.setIn(new FileInputStream("src/ans/´ë·®¼¼ÀÏ.txt"));
+		System.setIn(new FileInputStream("src/ans/ï¿½ë·®ï¿½ï¿½ï¿½ï¿½.txt"));
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		StringTokenizer st= new StringTokenizer(br.readLine());
 		StringBuilder sb = new StringBuilder();

@@ -1,10 +1,10 @@
-package practice;
+package í‘¼ë¬¸ì œ;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
-public class »öÁ¾ÀÌºÙÀÌ±â {
+public class ï¿½ï¿½ï¿½ï¿½ï¿½Ìºï¿½ï¿½Ì±ï¿½ {
 	static int map[][] = new int[11][11];
 	static int color_square[] = {5, 5, 5, 5, 5, 5};
 	static int ans = Integer.MAX_VALUE;
@@ -42,12 +42,12 @@ public class »öÁ¾ÀÌºÙÀÌ±â {
 		
 		if(map[y][x] == 1) {
 			for(int color = 5; color > 0 ; color-=1 ) {
-				if(color_simul(y,x,color) && color_square[color] > 0) { // Ã¤¿ï¼ö ÀÖÀ¸¸é?
-					color_fill(y,x,color,0); // 1·Î Ã¤¿ì°í
-					color_square[color]--;   // color¹øÂ° ¿ä¼Ò¸¦ °¨¼Ò ½ÃÅ²´Ù.
+				if(color_simul(y,x,color) && color_square[color] > 0) { // Ã¤ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½?
+					color_fill(y,x,color,0); // 1ï¿½ï¿½ Ã¤ï¿½ï¿½ï¿½
+					color_square[color]--;   // colorï¿½ï¿½Â° ï¿½ï¿½Ò¸ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Å²ï¿½ï¿½.
 					square(pos+1,cnt+1);
-					color_fill(y,x,color,1); // °¬´Ù¿ÔÀ¸´Ï 0À¸·Î Ã¤¿ì°í 
-					color_square[color]++;   // ´Ù½Ã Áõ°¡½ÃÅ²´Ù.
+					color_fill(y,x,color,1); // ï¿½ï¿½ï¿½Ù¿ï¿½ï¿½ï¿½ï¿½ï¿½ 0ï¿½ï¿½ï¿½ï¿½ Ã¤ï¿½ï¿½ï¿½ 
+					color_square[color]++;   // ï¿½Ù½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Å²ï¿½ï¿½.
 				}
 			}	
 		}

@@ -1,14 +1,14 @@
-package practice;
+package í‘¼ë¬¸ì œ;
 
 import java.util.HashMap;
 
 public class Hashmaptest {
 	public static void main(String[] args) {
 		HashMap<String, String> hm = new HashMap<>();
-		hm.put("¼­»ó¿ø", "¸ÚÀÖ´Ù");
-		hm.put("¼­»ó¿ø", "Àß»ý°å´Ù");
-		hm.put("¿ø»ó¼­", "±×³É±×·¸´Ù");
-		System.out.println(hm.get("¼­»ó¿ø"));
-		System.out.println(hm.get("¿ø»ó¼­"));
+		hm.put("ï¿½ï¿½ï¿½ï¿½ï¿½", "ï¿½ï¿½ï¿½Ö´ï¿½");
+		hm.put("ï¿½ï¿½ï¿½ï¿½ï¿½", "ï¿½ß»ï¿½ï¿½ï¿½ï¿½");
+		hm.put("ï¿½ï¿½ï¿½ï¿½", "ï¿½×³É±×·ï¿½ï¿½ï¿½");
+		System.out.println(hm.get("ï¿½ï¿½ï¿½ï¿½ï¿½"));
+		System.out.println(hm.get("ï¿½ï¿½ï¿½ï¿½"));
 	}
 }

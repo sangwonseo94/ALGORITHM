@@ -1,10 +1,10 @@
-package practice;
+package í‘¼ë¬¸ì œ;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
-public class swea_Á÷»ç°¢Çü {
+public class swea_ï¿½ï¿½ï¿½ç°¢ï¿½ï¿½ {
 	static int answer= 0;
 	public static void main(String[] args) throws Exception{
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));

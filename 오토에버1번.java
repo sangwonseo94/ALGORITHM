@@ -1,10 +1,10 @@
-package practice;
+package í‘¼ë¬¸ì œ;
 
 import java.io.BufferedReader;
 import java.io.FileInputStream;
 import java.io.InputStreamReader;
 
-public class ¿ÀÅä¿¡¹ö1¹ø {
+public class ï¿½ï¿½ï¿½ä¿¡ï¿½ï¿½1ï¿½ï¿½ {
 	static int dir[][] = {{1,0},{-1,0},{0,1},{0,-1}};
 	static int map[][] = {
 			{3,2,3,2,},
@@ -41,13 +41,13 @@ public class ¿ÀÅä¿¡¹ö1¹ø {
 	}
 	
 	public static void DFS(int y, int x, int len) {
-		// depthÀÇ ÃÖ°í±æÀÌ¸¦ Ã£´Â´Ù
+		// depthï¿½ï¿½ ï¿½Ö°ï¿½ï¿½ï¿½Ì¸ï¿½ Ã£ï¿½Â´ï¿½
 		res = Math.max(res,len);
 		for(int index = 0 ; index < 4 ; index++) {
 			int ny= y + dir[index][0];
 			int nx= x + dir[index][1];
 			if(ny>=0 && nx >=0 && ny<4 && nx<4) {
-				// ¹üÀ§ ¾È¿¡ ÀÖ°í,¹æ¹®ÇÏÁö ¾Ê¾Ò°í, ³ª¶û°°À¸¸é Àç±ÍÈ£Ãâ
+				// ï¿½ï¿½ï¿½ï¿½ ï¿½È¿ï¿½ ï¿½Ö°ï¿½,ï¿½æ¹®ï¿½ï¿½ï¿½ï¿½ ï¿½Ê¾Ò°ï¿½, ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½È£ï¿½ï¿½
 				if(!visit[ny][nx] && map2[y][x] == map2[ny][nx]) {
 					visit[ny][nx] = true;
 					DFS(ny,nx,len+1);

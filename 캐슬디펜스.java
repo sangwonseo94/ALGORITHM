@@ -1,10 +1,10 @@
-package practice;
+package í‘¼ë¬¸ì œ;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
-public class Ä³½½µðÆæ½º {
+public class Ä³ï¿½ï¿½ï¿½ï¿½ï¿½æ½º {
 	static int N,M,D;
 	static int map[][] = new int[20][20];
 	static int copy_map[][] = new int[20][20];
@@ -31,7 +31,7 @@ public class Ä³½½µðÆæ½º {
 	
 	public static void main(String[] args) throws Exception {
 		input();
-		// M°³ Áß¿¡ 3°³¸¦ ¼±ÅÃÇÕ´Ï´Ù.
+		// Mï¿½ï¿½ ï¿½ß¿ï¿½ 3ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Õ´Ï´ï¿½.
 		int archer[] = new int[M];
 		for(int index = 7 , size = (1<<M) ; index < size ; index++) {
 			int cnt =0;
@@ -101,7 +101,7 @@ public class Ä³½½µðÆæ½º {
 					} 
 				}
 			}
-			// ÇÑÁÙ¾¿ ³»·Á¿À°í Ã³¸®¸¦ ÇØÁØ´Ù. ¹æ¹®¹è¿­ÇÏ°í , Map¹è¿­À» ÇÑÄ­¾¿ ³»·Á ÁØ´Ù.
+			// ï¿½ï¿½ï¿½Ù¾ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Ã³ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ø´ï¿½. ï¿½æ¹®ï¿½è¿­ï¿½Ï°ï¿½ , Mapï¿½è¿­ï¿½ï¿½ ï¿½ï¿½Ä­ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ø´ï¿½.
 			
 			for(int y  = N ; y > 1 ; y--) {
 				for(int x = 1 ; x <= M ; x++) {

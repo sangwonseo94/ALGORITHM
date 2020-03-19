@@ -1,10 +1,10 @@
-package practice;
+package í‘¼ë¬¸ì œ;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 
 
-class »çÄ¢¿¬»ê{
+class ï¿½ï¿½Ä¢ï¿½ï¿½ï¿½ï¿½{
 	static String tree[][];
 	public static void main(String args[]) throws Exception{
 		int T=10;

@@ -1,4 +1,4 @@
-package practice;
+package 푼문제;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;

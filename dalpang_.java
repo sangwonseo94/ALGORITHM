@@ -1,4 +1,4 @@
-package practice;
+package í‘¼ë¬¸ì œ;
 
 
 import java.util.Scanner;
@@ -29,7 +29,7 @@ class dalpang_{
                 End +=1;
             } 
         
-        ///Ãâ·Â
+        ///ï¿½ï¿½ï¿½
         System.out.println("#"+test_case);
         for(int j = 0 ; j <bound ; j ++) {
             for(int i = 0 ; i <bound ; i ++) {
@@ -37,7 +37,7 @@ class dalpang_{
             }
           System.out.println();
         }
-        ///ÀçÀÔ·Â
+        ///ï¿½ï¿½ï¿½Ô·ï¿½
         number = 1; 
         x = 0; 
         y = 0;

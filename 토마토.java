@@ -1,11 +1,11 @@
-package practice;
+package í‘¼ë¬¸ì œ;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.util.ArrayDeque;
 import java.util.StringTokenizer;
 
-public class Åä¸¶Åä {
+public class ï¿½ä¸¶ï¿½ï¿½ {
 	
 	public static void main(String[] args) throws Exception{
 		int dir[][] = {{1,0},{-1,0},{0,1},{0,-1}};
@@ -16,7 +16,7 @@ public class Åä¸¶Åä {
 		int n = Integer.parseInt(st.nextToken());
 		int map[][] = new int[n][m];
 		ArrayDeque<int []> dq = new ArrayDeque<>();
-		//  0 ¹øÂ°´Â y ÁÂÇ¥ 1¹øÂ°´Â x ÁÂÇ¥ 2¹øÂ°´Â ³¯Â¥
+		//  0 ï¿½ï¿½Â°ï¿½ï¿½ y ï¿½ï¿½Ç¥ 1ï¿½ï¿½Â°ï¿½ï¿½ x ï¿½ï¿½Ç¥ 2ï¿½ï¿½Â°ï¿½ï¿½ ï¿½ï¿½Â¥
 		for (int y = 0 ; y<n ;y++) {
 			st = new StringTokenizer(br.readLine());
 			for(int x= 0 ; x < m ; x++) {

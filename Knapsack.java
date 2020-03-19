@@ -1,40 +1,52 @@
-package practice;
+package 풀문제;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
-public class Knapsack {
-	static int answer= 0 , N , Limit;
-	static int map[][];
+public class knapsack {
+	public static int dp[][],N,K;
+	public static int[] value;
+	public static int[] volumn;
 	public static void main(String[] args) throws Exception {
-	
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		StringTokenizer st = new StringTokenizer(br.readLine());
-		StringBuilder sb = new StringBuilder();
 		int T = Integer.parseInt(st.nextToken());
-		for(int tc = 1 ; tc <=T ; tc++) {
+		for(int tc = 1 ; tc<= T ;tc++) {
 			st = new StringTokenizer(br.readLine());
 			N = Integer.parseInt(st.nextToken());
-			Limit = Integer.parseInt(st.nextToken());
-			map=new int[N][2];//  0은 부피 1은 가치
-			for(int y= 0 ; y < N ; y++) {
+			K = Integer.parseInt(st.nextToken());
+			dp = new int[K+1][N+1]; // n번째 최대가치를 저장
+			value = new int[N+1];
+			volumn = new int[N+1];
+			for(int i = 1 ; i <= N ; i++) {
 				st = new StringTokenizer(br.readLine());
-				map[y][0] = Integer.parseInt(st.nextToken());
-				map[y][1] = Integer.parseInt(st.nextToken());
+				volumn[i] = Integer.parseInt(st.nextToken());
+				value[i] = Integer.parseInt(st.nextToken());
 			}
-			DFS(0,0,0);
-			sb.append("#"+tc + " " + answer+"\n");
-			answer =0;
+			dfs(K,N);
+			System.out.println("#"+tc+" "+dp[K][N]);
 		}
-		System.out.println(sb);
 	}
-	public static void DFS(int index, int V_Sum, int C_Sum) {
-		if(V_Sum > Limit) return;
-		else answer = Math.max(answer, C_Sum);
-		if(index == N) return;
-		DFS(index+1 , V_Sum + map[index][0] , C_Sum + map[index][1]);
-		DFS(index+1,  V_Sum , C_Sum );
+	public static int dfs(int spare_weight, int num) {
+		if(dp[spare_weight][num] > 0) {
+			//System.out.println( spare_weight +" 남고" + num +" 인덱스" +" 에서 dp 실행");
+			return dp[spare_weight][num];
+		}
+		if(spare_weight == 0 || num==0) {
+			return dp[spare_weight][num] = 0;
+		}
+		else {
+			int c1=0,c2=0;
+			if(spare_weight >= volumn[num]) {
+				// 뺼수 있다.
+				c1 = dfs(spare_weight-volumn[num],num-1)+value[num];
+			}
+			c2 = dfs(spare_weight,num-1);
+			return dp[spare_weight][num]  = Math.max(c1, c2);
+		}
+		
+		
 		
 	}
 

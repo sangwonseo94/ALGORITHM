@@ -1,11 +1,11 @@
-package practice;
+package í‘¼ë¬¸ì œ;
 
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
-public class È°ÁÖ·Î°Ç¼³ {
+public class È°ï¿½Ö·Î°Ç¼ï¿½ {
 
 	public static void main(String[] args) throws Exception {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -43,7 +43,7 @@ public class È°ÁÖ·Î°Ç¼³ {
 					can = false; break top;
 				}
 				if(now+1 == map[y][x]) {
-					//¿À¸£¸· °æ»ç
+					//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
 					if(x-L <0) {
 						can = false; break top;
 					}

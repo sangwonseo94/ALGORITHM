@@ -1,4 +1,4 @@
-package practice;
+package 푼문제;
 
 public class Ladder1 {
 

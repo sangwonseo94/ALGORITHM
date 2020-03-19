@@ -1,4 +1,4 @@
-package practice;
+package 푼문제;
 
 
 import java.util.ArrayDeque;
@@ -14,7 +14,7 @@ class info{
 		this.time = time;
 	}
 }
-class Ż�ֹ��˰�{
+class Ż�ֹ��˰�{
 	static int n,m,r,c,l;
 	static int map[][];
 	static boolean visit[][];

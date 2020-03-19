@@ -1,4 +1,4 @@
-package practice;
+package í‘¼ë¬¸ì œ;
 
 
 import java.io.BufferedReader;
@@ -6,13 +6,13 @@ import java.io.FileInputStream;
 import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
-public class ÁÙ±â¼¼Æ÷¹è¾ç2 {
+public class ï¿½Ù±â¼¼ï¿½ï¿½ï¿½ï¿½ï¿½2 {
 	static int answer = 0;
 	static int maxi = 0;
 	static int dir[][]= {{1,0},{-1,0},{0,-1},{0,1}};
 	
 	public static void main(String[] args) throws Exception {
-		System.setIn(new FileInputStream("src/ans/ÁÙ±â¼¼Æ÷.txt"));
+		System.setIn(new FileInputStream("src/ans/ï¿½Ù±â¼¼ï¿½ï¿½.txt"));
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		StringTokenizer st = new StringTokenizer(br.readLine());
 		StringBuilder sb = new StringBuilder();
@@ -23,16 +23,16 @@ public class ÁÙ±â¼¼Æ÷¹è¾ç2 {
 			int m = Integer.parseInt(st.nextToken());
 			int k = Integer.parseInt(st.nextToken());
 			int map_size = 1001;
-			int map[][] = new int[map_size][map_size]; 	 // ¼¼Æ÷ÀÇ »ýÁ¸½Ã°£À» ÀúÀåÇÏ´Â ¹è¿­
-			int Spread[][] = new int[map_size][map_size];// ´ÙÀ½ Å¸ÀÓ¿¡ ¹ø½Ä ÇÒ ¼¼Æ÷ÀÎÁö È®ÀÎÇÏ´Â ¹è¿­
-			int Born[][] = new int[map_size][map_size];  // ¹ø½ÄÈÄ ½Ã°£À» È®ÀÎÇÏ´Â ¹è¿­ 
-			int live[][] = new int[map_size][map_size];  // ¼¼Æ÷°¡ »ì¾Ò´ÂÁö Á×¾ú´ÂÁö È®ÀÎÇÏ´Â ¹è¿­
+			int map[][] = new int[map_size][map_size]; 	 // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ã°ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½ ï¿½è¿­
+			int Spread[][] = new int[map_size][map_size];// ï¿½ï¿½ï¿½ï¿½ Å¸ï¿½Ó¿ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ È®ï¿½ï¿½ï¿½Ï´ï¿½ ï¿½è¿­
+			int Born[][] = new int[map_size][map_size];  // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ã°ï¿½ï¿½ï¿½ È®ï¿½ï¿½ï¿½Ï´ï¿½ ï¿½è¿­ 
+			int live[][] = new int[map_size][map_size];  // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ò´ï¿½ï¿½ï¿½ ï¿½×¾ï¿½ï¿½ï¿½ï¿½ï¿½ È®ï¿½ï¿½ï¿½Ï´ï¿½ ï¿½è¿­
 			for(int y = 0 ; y < n ; y++) {
 				st = new StringTokenizer(br.readLine());
 				for(int x= 0 ; x <  m ;x++) {
 					map[y + map_size/2][x + map_size/2]= Integer.parseInt(st.nextToken());
 					if(map[y + map_size/2][x + map_size/2]!=0) {
-						live[y + map_size/2][x + map_size/2] = 1; // 0ÀÌ ¾Æ´Ï¸é »ìÀº ¼¼Æ÷
+						live[y + map_size/2][x + map_size/2] = 1; // 0ï¿½ï¿½ ï¿½Æ´Ï¸ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 						
 					}
 				}
@@ -42,7 +42,7 @@ public class ÁÙ±â¼¼Æ÷¹è¾ç2 {
 				for(int y=0  ; y < map_size; y++){
 					for(int x=  0; x< map_size; x++){
 						if( live[y][x]==1 && ((time % (map[y][x] + 1) == map[y][x]))|| time == map[y][x]) {
-							// »ì¾ÆÀÖ´Â ¾ÖµéÁß¿¡ ÀÚ±â Â÷·Ê°¡ µÇ¸é ´ÙÀ½ ½Ã°£¿¡ ¹ø½Ä ÇÒ ¼¼Æ÷µé
+							// ï¿½ï¿½ï¿½ï¿½Ö´ï¿½ ï¿½Öµï¿½ï¿½ß¿ï¿½ ï¿½Ú±ï¿½ ï¿½ï¿½ï¿½Ê°ï¿½ ï¿½Ç¸ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ã°ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 							Spread[y][x] = 1;
 						}
 					}
@@ -50,19 +50,19 @@ public class ÁÙ±â¼¼Æ÷¹è¾ç2 {
 				
 				for(int y=0; y < map_size; y++) {
 					for(int x=  0; x< map_size ; x++) {
-						if(live[y][x] == 1 &&Spread[y][x] == 2) { // »ì¾ÆÀÖ°í ÀÚ±â Â÷·ÊÀÎ ¾Öµé ¹ø½ÄÇØ¾ßÇÔ
+						if(live[y][x] == 1 &&Spread[y][x] == 2) { // ï¿½ï¿½ï¿½ï¿½Ö°ï¿½ ï¿½Ú±ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Öµï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ø¾ï¿½ï¿½ï¿½
 							for(int a = 0 ; a <4 ; a++) {
 								int ny = y +dir[a][0];
 								int nx = x +dir[a][1];
 								if(ny < 0 || nx <0 || ny >= map_size ||nx >= map_size ) continue;
 								if(map[ny][nx] ==0) {
-									// µ¿½Ã ¹ø½Ä½Ã Å«ÂÊÀÌ ¹ø½Ä ÇØ¾ßÇÔ. 
-									// °¡·Á´Â ÂÊÀÌ 0ÀÌ¸é ¹ø½Ä
+									// ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ä½ï¿½ Å«ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ø¾ï¿½ï¿½ï¿½. 
+									// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ 0ï¿½Ì¸ï¿½ ï¿½ï¿½ï¿½ï¿½
 									map[ny][nx] = map[y][x];
 									live[ny][nx] = 2;
 								}
 								else if(live[ny][nx] == 2  && map[ny][nx] < map[y][x]) {
-									// ´Ù¸¥ ¼¼Æ÷°¡ ¹ø½ÄÇßÀ» °æ¿ì, »ýÁ¸½Ã°£ÀÌ 0 ÀÎ¾Öµé == °« ÅÂ¾î³­ ¾Öµé , Áß¿¡¼­ ³ªº¸´Ù ÀÛÀ¸¸é ¹ø½Ä°¡´É
+									// ï¿½Ù¸ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½, ï¿½ï¿½ï¿½ï¿½ï¿½Ã°ï¿½ï¿½ï¿½ 0 ï¿½Î¾Öµï¿½ == ï¿½ï¿½ ï¿½Â¾î³­ ï¿½Öµï¿½ , ï¿½ß¿ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ä°ï¿½ï¿½ï¿½
 									map[ny][nx] = map[y][x];
 									live[ny][nx] = 2;
 								}
@@ -79,27 +79,27 @@ public class ÁÙ±â¼¼Æ÷¹è¾ç2 {
 							live[y][x] =1;	
 						}
 						if(Born[y][x]== map[y][x]) {
-							// »ì¾ÆÀÖ´Â ½Ã°£ÀÌ »ýÁ¸½Ã°£ÇÏ°í °°¾ÆÁö¸é 
+							// ï¿½ï¿½ï¿½ï¿½Ö´ï¿½ ï¿½Ã°ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ã°ï¿½ï¿½Ï°ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
 							live[y][x] =0;
 						}
 						if(Spread[y][x] ==1) {
-							//¹ø½Ä ¿¹Á¤ÀÎ Ä£±¸µéÀÌ ´ÙÀ½ ½Ã°£¿¡ ¹ø½ÄÇÒ¼ö ÀÖ°Ô °ªÀ» 1 ´Ã·ÁÁØ´Ù.
+							//ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Ä£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ã°ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ò¼ï¿½ ï¿½Ö°ï¿½ ï¿½ï¿½ï¿½ï¿½ 1 ï¿½Ã·ï¿½ï¿½Ø´ï¿½.
 							Spread[y][x] =2;
 						}
 						if(live[y][x]==1 && Spread[y][x] ==2) {
-							// »ì¾Æ ÀÖÀ¸¸é »ýÁ¸ ½Ã°£À» +1 Áõ°¡½ÃÄÑÁØ´Ù
-							// ÀÌ °ªÀÌ mapÀÌ¶û °°¾ÆÁö¸é ±× ¼¼Æ÷´Â Á×´Â´Ù.
+							// ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ã°ï¿½ï¿½ï¿½ +1 ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ø´ï¿½
+							// ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ mapï¿½Ì¶ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½×´Â´ï¿½.
 							Born[y][x] +=1;
 						} 
 						
 					}
 				}
-				// ÀüÃ¼ lifetimeÀ» °¨¼Ò½ÃÅ°¸é¼­ lifetime ÀÌ 0µÇ´Â ¾ÖµéÀÇ live º¯¼ö¸¦ ²¨ÁÜ
+				// ï¿½ï¿½Ã¼ lifetimeï¿½ï¿½ ï¿½ï¿½ï¿½Ò½ï¿½Å°ï¿½é¼­ lifetime ï¿½ï¿½ 0ï¿½Ç´ï¿½ ï¿½Öµï¿½ï¿½ï¿½ live ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 				
 				
 				
 			}
-			// ±×¶§ ¸Ê¿¡ ¸î°³°¡ »ì¾ÆÀÖ´ÂÁö live º¯¼ö¸¸ ¼¼ÁÜ
+			// ï¿½×¶ï¿½ ï¿½Ê¿ï¿½ ï¿½î°³ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ö´ï¿½ï¿½ï¿½ live ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 			for(int y=0; y < map_size; y++) {
 				for(int x=  0 ; x<map_size  ; x++) {	
 					//System.out.print(map[y][x] +" ");

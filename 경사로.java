@@ -1,10 +1,10 @@
-package practice;
+package í‘¼ë¬¸ì œ;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
-public class °æ»ç·Î {
+public class ï¿½ï¿½ï¿½ï¿½ {
 
 	public static void main(String[] args) throws Exception {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -21,7 +21,7 @@ public class °æ»ç·Î {
 			}
 		}
 		int copy[][] = new int[N][N];
-		// ±âÁ¸ ¹è¿­À» 90µµ È¸Àü½ÃÄÑ ¹è¿­ ¾Æ·¡¿¡ ºÙ¿©¼­ ÇàÀÇ °ª¸¸ Áõ°¡½ÃÄÑ¼­ ÇÑ¹ø¿¡ È®ÀÎÇÑ´Ù.
+		// ï¿½ï¿½ï¿½ï¿½ ï¿½è¿­ï¿½ï¿½ 90ï¿½ï¿½ È¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½è¿­ ï¿½Æ·ï¿½ï¿½ï¿½ ï¿½Ù¿ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ñ¼ï¿½ ï¿½Ñ¹ï¿½ï¿½ï¿½ È®ï¿½ï¿½ï¿½Ñ´ï¿½.
 		for(int y=0;y <N ;y++) {
 			for(int x= 0 , i = N-1; x< N; x++ , i--) {
 				map[N+y][x] = map[i][y];
@@ -38,22 +38,22 @@ public class °æ»ç·Î {
 					can = false; break top;
 				}
 				if(now+1 == map[y][x]) {
-					//¿À¸£¸· °æ»ç
+					//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
 					if(x-L <0) {
 						can = false; break top;
-					}// ¹üÀ§¸¦ ¹þ¾î³­ °æ¿ì
+					}// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½î³­ ï¿½ï¿½ï¿½
 					for(int k = x -L ; k < x;k++) {
 						if(now != map[y][k] || visit[k]) {
 							can = false; break top;
 						}
 					}
-					// ÀÌÀü¿¡ »ç¿ëÇß´ø °æ¿ì
+					// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ß´ï¿½ ï¿½ï¿½ï¿½
 					if(can) {
 						for(int k = x -L ; k < x;k++) {
 							visit[k] = true;
 						}
 						now = map[y][x];
-					// °æ»ç·Î¸¦ ³õ´Â´Ù.
+					// ï¿½ï¿½ï¿½Î¸ï¿½ ï¿½ï¿½ï¿½Â´ï¿½.
 					}
 				}
 				if(now-1== map[y][x]) {

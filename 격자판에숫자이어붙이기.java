@@ -1,11 +1,11 @@
-package practice;
+package í‘¼ë¬¸ì œ;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.util.HashSet;
 import java.util.StringTokenizer;
 
-public class °İÀÚÆÇ¿¡¼ıÀÚÀÌ¾îºÙÀÌ±â {
+public class ï¿½ï¿½ï¿½ï¿½ï¿½Ç¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ì¾ï¿½ï¿½ï¿½Ì±ï¿½ {
 	static public class name{
 		
 	}

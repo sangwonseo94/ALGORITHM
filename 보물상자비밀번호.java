@@ -1,4 +1,4 @@
-package practice;
+package í‘¼ë¬¸ì œ;
 
 
 import java.util.Arrays;
@@ -12,7 +12,7 @@ import java.io.BufferedReader;
 import java.io.FileInputStream;
 import java.io.InputStreamReader;
 
-class º¸¹°»óÀÚºñ¹Ð¹øÈ£
+class ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Úºï¿½Ð¹ï¿½È£
 {
 	public static void main(String args[]) throws Exception
 	{

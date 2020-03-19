@@ -1,10 +1,10 @@
-package practice;
+package í‘¼ë¬¸ì œ;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
-public class ¾ÈÀü¿µ¿ª {
+public class ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ {
 	static int map[][];
 	static int max_h = Integer.MIN_VALUE;
 	static int n;

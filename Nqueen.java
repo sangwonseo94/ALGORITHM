@@ -1,4 +1,4 @@
-package practice;
+package í‘¼ë¬¸ì œ;
 
 import java.util.Scanner;
 
@@ -36,14 +36,14 @@ public class Nqueen {
 	}
 
 	public static void check(int y, int x, int i) {
-		for(int index = x+1 ; index <n ; index++)visit[y][index] +=i; // ¿À¸¥ÂÊ
-		for(int index = y+1 ; index <n ; index++)visit[index][x] +=i; // ¾Æ·¡ÂÊ
-		for(int index = x-1 ; index >=0 ; index--)visit[y][index] +=i; // ¿ÞÂÊ
-		for(int index = y-1 ; index >=0 ; index--)visit[index][x] +=i; // À§ÂÊ
+		for(int index = x+1 ; index <n ; index++)visit[y][index] +=i; // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+		for(int index = y+1 ; index <n ; index++)visit[index][x] +=i; // ï¿½Æ·ï¿½ï¿½ï¿½
+		for(int index = x-1 ; index >=0 ; index--)visit[y][index] +=i; // ï¿½ï¿½ï¿½ï¿½
+		for(int index = y-1 ; index >=0 ; index--)visit[index][x] +=i; // ï¿½ï¿½ï¿½ï¿½
 		visit[y][x] +=i;
-		for(int index = 1 ; index <n ; index++)if(y-index >=0 && x+index< n)visit[y-index][x+index] +=i; // ¿À¸¥ÂÊ À§
-		for(int index = 1 ; index <n ; index++)if(y+index < n && x+index< n)visit[y+index][x+index] +=i; // ¿À¸¥ÂÊ ¾Æ·¡
-		for(int index = 1 ; index <n ; index++)if(y-index >=0 && x-index>=0)visit[y-index][x-index] +=i; // ¿ÞÂÊ À§
-		for(int index = 1 ; index <n ; index++)if(y+index < n && x-index>=0)visit[y+index][x-index] +=i; // ¿ÞÂÊ ¾Æ·¡	
+		for(int index = 1 ; index <n ; index++)if(y-index >=0 && x+index< n)visit[y-index][x+index] +=i; // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½
+		for(int index = 1 ; index <n ; index++)if(y+index < n && x+index< n)visit[y+index][x+index] +=i; // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Æ·ï¿½
+		for(int index = 1 ; index <n ; index++)if(y-index >=0 && x-index>=0)visit[y-index][x-index] +=i; // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½
+		for(int index = 1 ; index <n ; index++)if(y+index < n && x-index>=0)visit[y+index][x-index] +=i; // ï¿½ï¿½ï¿½ï¿½ ï¿½Æ·ï¿½	
 	}
 }

@@ -1,11 +1,11 @@
-package practice;
+package í‘¼ë¬¸ì œ;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.util.Arrays;
 import java.util.StringTokenizer;
 
-public class BOJ_°Ô¸®¸à´õ¸µ2 {
+public class BOJ_ï¿½Ô¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½2 {
 
 	public static void main(String[] args)  throws Exception {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -21,11 +21,11 @@ public class BOJ_°Ô¸®¸à´õ¸µ2 {
 		}
 		for(int y = 2 ; y < n ; y++) {
 			for(int x = 1 ; x < n-1 ; x++) {
-				// °¡´ÉÇÑ d1,d2ÀÇ ÃÖ´ë¹üÀ§¸¦ ±¸ÇÑ´Ù
-				// d1,d2¹üÀ§±îÁö µ¹¸é¼­ mapÀ» ³ª´©¾îÁØ´Ù.
-				// map±âÁØÀ¸·Î ÀûÈù ¼ýÀÚµéÀÇ ÇÕÀ» ±¸ÇÏ°í, °¡Àå¸¹Àº ¼±°Å±¸¿Í °¡Àå ÀûÀº ¼±°Å±¸¸¦ µ¹¸é¼­ È®ÀÎÇÑ´Ù
-				// µÑÀÇ Â÷ÀÌ¸¦ answer¿¡ ´ã°í, ´ÙÀ½¹ø¿¡´Â answer¿Í resÁß ÀÛÀº°ªÀ» answer¿¡ ´ã´Â´Ù.
-				// (d1, d2 ¡Ã 1, 1 ¡Â x < x+d1+d2 ¡Â N, 1 ¡Â y-d1 < y < y+d2 ¡Â N)
+				// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ d1,d2ï¿½ï¿½ ï¿½Ö´ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ñ´ï¿½
+				// d1,d2ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½é¼­ mapï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ø´ï¿½.
+				// mapï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Úµï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ï°ï¿½, ï¿½ï¿½ï¿½å¸¹ï¿½ï¿½ ï¿½ï¿½ï¿½Å±ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Å±ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½é¼­ È®ï¿½ï¿½ï¿½Ñ´ï¿½
+				// ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ì¸ï¿½ answerï¿½ï¿½ ï¿½ï¿½ï¿½, ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ answerï¿½ï¿½ resï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ answerï¿½ï¿½ ï¿½ï¿½Â´ï¿½.
+				// (d1, d2 ï¿½ï¿½ 1, 1 ï¿½ï¿½ x < x+d1+d2 ï¿½ï¿½ N, 1 ï¿½ï¿½ y-d1 < y < y+d2 ï¿½ï¿½ N)
 				
 				int d1max =y -1; int d2max = n - y -1;
 				for(int d1 = 1 ; d1 <= d1max ; d1++) {

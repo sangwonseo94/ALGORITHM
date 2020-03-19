@@ -1,10 +1,10 @@
-package practice;
+package í‘¼ë¬¸ì œ;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
-public class ÃÖÀû°æ·Î {
+public class ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ {
 	static int answer =Integer.MAX_VALUE,n;
 	static int info[][];
 	static boolean visit[];
@@ -19,8 +19,8 @@ public class ÃÖÀû°æ·Î {
 			n = Integer.parseInt(st.nextToken());
 			info= new int[n+2][2]; 
 			visit = new boolean[n+2];
-			// 0Àº yÁÂÇ¥ 1Àº xÁÂÇ¥
-			// 0Àº Áý n+1Àº È¸»ç ³ª¸ÓÁö´Â °í°´
+			// 0ï¿½ï¿½ yï¿½ï¿½Ç¥ 1ï¿½ï¿½ xï¿½ï¿½Ç¥
+			// 0ï¿½ï¿½ ï¿½ï¿½ n+1ï¿½ï¿½ È¸ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½
 			st = new StringTokenizer(br.readLine());
 			for(int index = 0 ; index < n+2  ;index++) {
 				if(index == 0) {
@@ -36,7 +36,7 @@ public class ÃÖÀû°æ·Î {
 					info[index-1][1] = Integer.parseInt(st.nextToken()); 
 				}
 			}
-			DFS(0,0,0); // ÇöÀçÀ§Ä¡ , ÇöÀç ´©Àû°Å¸®, ¸î¹ø µé¾î°¬´ÂÁö
+			DFS(0,0,0); // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¡ , ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Å¸ï¿½, ï¿½ï¿½ï¿½ ï¿½ï¿½î°¬ï¿½ï¿½ï¿½ï¿½
 			sb.append("#"+tc+" "+answer+"\n");
 			answer = Integer.MAX_VALUE;
 		}

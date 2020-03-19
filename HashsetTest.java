@@ -1,4 +1,4 @@
-package practice;
+package í‘¼ë¬¸ì œ;
 
 import java.util.HashSet;
 
@@ -6,7 +6,7 @@ public class HashsetTest {
 
 	public static void main(String[] args) {
 		HashSet<String> HS = new HashSet<>();
-		HS.add("ÇÏ³ª"); HS.add("ÇÏ³ª"); HS.add("µÎ³ª"); HS.add("¼¼³ª"); HS.add("¼¼³ª");
+		HS.add("ï¿½Ï³ï¿½"); HS.add("ï¿½Ï³ï¿½"); HS.add("ï¿½Î³ï¿½"); HS.add("ï¿½ï¿½ï¿½ï¿½"); HS.add("ï¿½ï¿½ï¿½ï¿½");
 		System.out.println(HS.toArray()[0] + " " + HS.toArray()[1] + " "+ HS.toArray()[2]);
 		System.out.println("Hash Set Size : " + HS.size());
 	}

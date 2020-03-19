@@ -1,11 +1,11 @@
-package practice;
+package í‘¼ë¬¸ì œ;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.util.ArrayDeque;
 import java.util.StringTokenizer;
 
-public class ÁÖÂ÷Å¸¿ö {
+public class ï¿½ï¿½ï¿½ï¿½Å¸ï¿½ï¿½ {
 	static int answer=0;
 	public static void main(String[] args) throws Exception {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -56,13 +56,13 @@ public class ÁÖÂ÷Å¸¿ö {
 				int pos = order.poll();
 				if(idx==0 && pos>0) {
 					wait.add(pos);
-					//²ËÃ¡´Ù´Â ¸»·Î
-					//´ë±â¿­¿¡ ³Ö¾îÁÜ
+					//ï¿½ï¿½Ã¡ï¿½Ù´ï¿½ ï¿½ï¿½ï¿½ï¿½
+					//ï¿½ï¿½â¿­ï¿½ï¿½ ï¿½Ö¾ï¿½ï¿½ï¿½
 					continue;
 				}
 				if(pos <0) {
-					//À½¼ö¸é ±× ÀÚ¸® ¹æ¹®Ã³¸®¸¦ ¹Ù²Ù¾îÁÖ°í 
-					//µ· °è»ê // 
+					//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½Ú¸ï¿½ ï¿½æ¹®Ã³ï¿½ï¿½ï¿½ï¿½ ï¿½Ù²Ù¾ï¿½ï¿½Ö°ï¿½ 
+					//ï¿½ï¿½ ï¿½ï¿½ï¿½ // 
 					int temp=0;
 					for(int index= 1; index<=n ; index++) {
 						if(visit[index]== (-pos)) {
@@ -75,10 +75,10 @@ public class ÁÖÂ÷Å¸¿ö {
 				}
 				
 				if(pos>0) {
-					// ºñ¾îÀÖ´Â idx¿¡ ÇöÀç Â÷·®À» ³Ö¾îÁÜ
+					// ï¿½ï¿½ï¿½ï¿½Ö´ï¿½ idxï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ö¾ï¿½ï¿½ï¿½
 					//now[idx] = cost[pos];
 					visit[idx] = pos;
-					// ÀÖ´Ù´Â Ç¥½Ã
+					// ï¿½Ö´Ù´ï¿½ Ç¥ï¿½ï¿½
 				}
 				
 			}

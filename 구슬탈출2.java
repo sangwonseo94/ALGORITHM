@@ -1,4 +1,4 @@
-package practice;
+package í‘¼ë¬¸ì œ;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
@@ -14,7 +14,7 @@ class position{
 		this.success = success;
 		}
 }
-public class ±¸½½Å»Ãâ2 {
+public class ï¿½ï¿½ï¿½ï¿½Å»ï¿½ï¿½2 {
 	static int N,M;
 	static char map[][];
 	static int red_x,red_y,blue_x,blue_y;
@@ -80,7 +80,7 @@ public class ±¸½½Å»Ãâ2 {
 				int blue_nx = now_b.x;
 				if(now_r.len >=10) return;
 				while(true) {
-					// red ÁÂÇ¥ ÀÌµ¿
+					// red ï¿½ï¿½Ç¥ ï¿½Ìµï¿½
 					red_ny +=dy[index];
 					red_nx +=dx[index];
 					if(map[red_ny][red_nx]=='.') continue;
