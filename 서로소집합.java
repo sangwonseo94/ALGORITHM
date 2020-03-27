@@ -1,4 +1,4 @@
-package 풀문제;
+package 푼문제;
 
 import java.util.Scanner;
 
