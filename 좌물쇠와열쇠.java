@@ -22,8 +22,7 @@ public class 좌물쇠와열쇠 {
         	}
         }
         
-        
-        for(int i = 0 ; i<= m+n-2 ; i++) {
+         for(int i = 0 ; i<= m+n-2 ; i++) {
         	for(int j = 0 ; j <= m+n-2; j++) {
         		for(int k = 0 ; k <4 ; k ++) {
         		key = rotate(key);	
@@ -62,12 +61,12 @@ public class 좌물쇠와열쇠 {
 	        	    	  return true;
 	        	      }
         		}
-	    		// rollback
-	    		for(int a = i ;a <= i+m-1; a++) {
-	    			for(int b = j ; b <= j+m-1; b++) {
-	    			   copymap[a][b] = map[a][b];
+	    			// rollback
+	    			for(int a = i ;a <= i+m-1; a++) {
+	    				for(int b = j ; b <= j+m-1; b++) {
+	    					copymap[a][b] = map[a][b];
+	    				}
 	    			}
-	    		}
         		}
         	}
         }
