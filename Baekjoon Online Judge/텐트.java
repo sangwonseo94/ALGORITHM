@@ -9,8 +9,9 @@ import java.util.HashMap;
 public class 텐트 {
 
 	public static void main(String[] args) throws Exception {
-		
+
 		System.out.println(solution(4, new int[][] { {0,0},{1,1},{2,0},{0,2}}));
+		System.out.println(solution(4, new int[][] { {0,0},{5,5},{10,0},{0,10}}));
 	}
 	
 	  public static int solution(int n, int[][] data) {
@@ -36,8 +37,6 @@ public class 텐트 {
 	        	newdata[i][0] = xco.get(data[i][0]);
 	        	newdata[i][1] = yco.get(data[i][1]);
 	        }
-	        
-	        System.out.println("12");
 	        
 	        return answer;
 	    }
