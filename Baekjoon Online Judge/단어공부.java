@@ -1,27 +1,36 @@
-package 풀문제2;
+package solvedClass;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
-import java.util.HashMap;
 
 public class 단어공부 {
 
 	public static void main(String[] args) throws Exception {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		String str = br.readLine();
-		int max = 0;
-		HashMap<Character, Integer> hs = new HashMap<>();
-		for(int i = 0 ; i < str.length(); i++) {
-			char c = str.charAt(i);
-			if(hs.containsKey(c)){
-				int t = hs.get(c);
-				hs.put(c, t+1);
-				max = max > t+1 ? max : t+1;
+		int index[] = new int['z'-'a'+1];
+		for(int i = 0 ; i < str.length() ; i ++) {
+			if(str.charAt(i) >= 'A' && str.charAt(i) <='Z' ) {
+				index[str.charAt(i)-'A']++;
 			} else {
-				hs.put(c, 1);
+				index[str.charAt(i)-'a']++;
 			}
 		}
-		System.out.println(max);
+		int max = 0;
+		char answer =0;
+		boolean check = false;
+		for(int i = 0 ; i < index.length ; i++) {
+			if(max < index[i]) {
+				max = index[i];
+				answer = (char) (i + 'A');
+				check = false;
+				continue;
+			} else if(max == index[i]) {
+				check = true;
+			}
+		}
+		if(check) System.out.println("?");
+		else {System.out.println(answer);}
 		
 	}
 }

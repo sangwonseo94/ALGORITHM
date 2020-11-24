@@ -1,4 +1,4 @@
-package 풀문제2;
+package algorithm;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
@@ -8,143 +8,149 @@ import java.util.PriorityQueue;
 import java.util.StringTokenizer;
 
 public class 스타트택시 {
+	public static class node{
+		int y, x ,f;
 
-	public static void main(String[] args) throws Exception {
-
-		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-		StringTokenizer st= new StringTokenizer(br.readLine());
+		public node(int y, int x, int f) {
+			super();
+			this.y = y;
+			this.x = x;
+			this.f = f;
+		}
 		
+	}
+	public static void main(String[] args) throws Exception {
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		StringTokenizer st = new StringTokenizer(br.readLine());
 		int n = Integer.parseInt(st.nextToken());
 		int m = Integer.parseInt(st.nextToken());
-		int init = Integer.parseInt(st.nextToken());
+		int f = Integer.parseInt(st.nextToken());
 		int map[][] = new int[n+1][n+1];
-		int info[][] = new int[m][2];
-		for(int i = 1 ; i <= n ; i ++) {
-			st=  new StringTokenizer(br.readLine());
-			for(int j = 1 ; j <= n ; j++) {
+		int humenposition[][] = new int[n+1][n+1];
+		int humen[][] = new int[m+1][4];
+		for(int i = 1; i <= n; i ++) {
+			st = new StringTokenizer(br.readLine());
+			for(int j = 1 ;j <= n; j ++) {
 				map[i][j] = Integer.parseInt(st.nextToken());
 			}
 		}
-		int sy =0  , sx = 0 ;
 		st = new StringTokenizer(br.readLine());
-		sy = Integer.parseInt(st.nextToken());
-		sx = Integer.parseInt(st.nextToken());
-		
-		for(int i = 0 ; i < m; i ++) {
-			st = new StringTokenizer(br.readLine());
-			
-			map[Integer.parseInt(st.nextToken())][Integer.parseInt(st.nextToken())] = i+2;
-			for(int j = 0 ;  j < 2; j ++) {
-				info[i][j] = Integer.parseInt(st.nextToken());
-				// 목적지 
+		int starty = Integer.parseInt(st.nextToken());
+		int startx = Integer.parseInt(st.nextToken());
+		for(int i = 0 ; i < m ; i ++) {
+			st= new StringTokenizer(br.readLine());
+			for(int j = 0 ; j <4 ; j ++) {
+				humen[i][j] = Integer.parseInt(st.nextToken());
 			}
+			humenposition[humen[i][0]][humen[i][1]] = i+1;
 		}
-		
-		// end input 
-		
-		PriorityQueue<int [] > pq = new PriorityQueue<>(new Comparator<int[]>() {
+		// end input
+		ArrayDeque<node> dq = new ArrayDeque<>();
+		PriorityQueue<int []> pq = new PriorityQueue<int[]>( new Comparator<int []>() {
 			@Override
 			public int compare(int[] o1, int[] o2) {
-				if(o1[0] > o2[0]) {
-					return 1;
-				} else if (o1[0] == o2[0]){
-					 if(o1[1] > o2[1]) {
-						 return 1;
-					 } else if(o1[1] == o2[1]) {
-						 return -1;
-					 } else {
-						 return 0;
-					 }
-				} else {
+				if(o1[0] < o2[0]) {
 					return -1;
+				} else if(o1[0] > o2[0]) {
+					return 1;
+				} else {
+					if(o1[1] > o2[1]) {
+						return 1;
+					} else if(o1[1] < o2[1]){
+						return -1;
+					} else {
+						return 0;
+					}
 				}
 			}
 		});
-		int visit[][] = new int[n+1][n+1];
-		int time = 1;
-		boolean used[] = new boolean[m+2];
-		int isOn = 0;
-		int targetY =0 , targetX =0;
-		ArrayDeque<int[]> dq = new ArrayDeque<>();
-		dq.add(new int[] {sy,sx,init,0});
 		int dir[][] = {{1,0},{-1,0},{0,-1},{0,1}};
-		visit[sy][sx] = time;
-		int answer = 0,cnt=0;
+		int visit[][] = new int[n+1][n+1];
+		int cnt =1;
+		boolean impossible = false;
+		dq.add(new node(starty , startx, f)); // 시작지점
+		int end = 0;
 		top :
-		while(!dq.isEmpty()) {
-			int size = dq.size();
-			
-			while(size>0) {
-				int [] now = dq.poll();
-				size--;
-				if(isOn >0 && now[0] == targetY && now[1] == targetX) {
-					System.out.println("도착" +now[0] + "x" + now[1]);
-					System.out.println("연료 : "+now[2] + "거리" + now[3]);
-					int oil = now[2];
-					int len = now[3];
-					
-					if(oil-len < 0) {
-						answer = -1;
-						break top;
-					} else {
-						now[3] = 0;
-						now[2] += (len);
-					}
-					// 기름계산 
-					// dq초기화 다시시작
-					// map 도 바꾸어야한다.
-					int temp[] = {targetY ,targetX , now[2] , 0};
-					dq.clear();
-					dq.add(temp);
-					used[isOn] = true;
-					isOn = 0;
-					cnt++;
-					if(cnt == m) {
-						answer = now[2];
-						break top;
-					}
-					time++;
-					
+		while(true) {
+			if(cnt !=1) cnt++;
+			// pq에 하나 들어갈 때까지 반복
+			while(pq.isEmpty()) {
+				int size = dq.size();
+				if(size == 0) {
+					impossible = true;
+					break;
 				}
-				for(int i = 0 ; i < 4 ; i ++) {
-					int ny = now[0] + dir[i][0];
-					int nx = now[1] + dir[i][1];
-					if( ny > 0 && nx > 0 && ny <=n && nx <=n && visit[ny][nx] < time) {
-						if(map[ny][nx] == 0 ) {
-							visit[ny][nx] = time;
-							if ( isOn == 0) {
-								dq.add(new int[] {ny,nx,now[2]-1,now[3]});
-							} else {
-								dq.add(new int[] {ny,nx,now[2],now[3]+1});
+				while(size >0) {
+					size--;
+					node now = dq.poll();
+					int nowy = now.y;
+					int nowx = now.x;
+					int nowf = now.f;
+					if(humenposition[nowy][nowx] !=0 ) {
+						pq.add(new int[] {nowy,nowx,humenposition[nowy][nowx],nowf});
+					}  
+					for(int i = 0 ; i < 4 ; i ++) {
+						int ny = nowy+dir[i][0];
+						int nx = nowx+dir[i][1];
+						if(ny > 0 && nx > 0 && ny <= n && nx <= n) {
+							if(map[ny][nx] != 1 && visit[ny][nx] != cnt) {
+								visit[ny][nx] = cnt;
+								dq.add(new node(ny, nx, nowf-1));
+							} else if(nowf < 0) {
+								impossible = true;
+								break top;
 							}
-						} else if(map[ny][nx] > 1 && isOn == 0 && !used[map[ny][nx]]) {
-							//System.out.println(now[0] + " " + now[1]);
-							visit[ny][nx] = time;
-							pq.add(new int[]{ny,nx,now[2]-1,now[3]});
-						} else if(isOn  > 0) {
-							dq.add(new int[] {ny,nx,now[2],now[3]+1});
 						}
 					}
 				}
-					
 			}
-			// 손님 계산
-			if(!pq.isEmpty()) {
-				int [] client = pq.poll();
-				pq.clear();
-				isOn = map[client[0]][client[1]];
-				System.out.println("손님 위치 " + client[0] + "x" + client[1]);
-				System.out.println("연료 : " + client[2] + "주행거리 " + client[3]);
-				
-				used[isOn] = true;
-				targetY = info[isOn-2][0];
-				targetX = info[isOn-2][1];
-				time++;
-				int temp[] = {client[0] ,client[1] , client[2] , 0};
+			if(impossible) {
+				break;
+			}
+			cnt++;
+			int [] now = pq.poll();
+			pq.clear();
+			dq.clear();
+			
+			int sstarty = now[0];
+			int sstartx = now[1];
+			int endy = humen[now[2]-1][2];
+			int endx = humen[now[2]-1][3];
+			f = now[3];
+			visit[sstarty][sstartx] = cnt;
+			dq.add(new node(sstarty , sstartx, 0));
+			tip :
+			while(!dq.isEmpty()) {
+				node nnow = dq.poll();
+					for(int i = 0 ; i < 4 ; i++) {
+						int ny = nnow.y + dir[i][0];
+						int nx = nnow.x + dir[i][1];
+						if(ny > 0 && nx >0 && ny<= n && nx<=n) {
+							if(map[ny][nx] != 1 && visit[ny][nx] != cnt) {
+								visit[ny][nx] = cnt;
+								dq.add(new node(ny,nx,nnow.f+1));
+							}
+							if(ny == endy && nx == endx && f-(nnow.f+1) >=0) {
+								f +=(nnow.f+1);
+								humenposition[sstarty][sstartx] =0;
+								end++;
+								break tip;
+							} 
+						}
+					}
+			}
+			if(end == m) {
+				break;
+			} else if(f==now[3]) {
+				impossible = true;
+				break;
+			} else if(end < m) {
 				dq.clear();
-				dq.add(temp);
+				visit[endy][endx] = cnt+1;
+				dq.add(new node(endy, endx , f));
 			}
-		}System.out.println(answer = answer <=0 ? -1 : answer);
+			
+		}	
+		System.out.println(  impossible ? -1 : f  );
 	}
-
 }
