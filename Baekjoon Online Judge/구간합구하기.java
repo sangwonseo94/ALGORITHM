@@ -5,7 +5,7 @@ import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
 public class 구간합구하기 {
-	static long seg[] ,num[];
+	public static long seg[] ,num[];
 	public static void main(String[] args) throws Exception {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		StringTokenizer st = new StringTokenizer(br.readLine());
@@ -14,13 +14,13 @@ public class 구간합구하기 {
 		int k = Integer.parseInt(st.nextToken());
 		num = new long[n];
 		seg = new long[4*n];
-		for(int index = 0 ; index < n ; index++) {num[index] = Integer.parseInt(br.readLine());}
+		for(int index = 0 ; index < n ; index++) {num[index] = Long.parseLong(br.readLine());}
 		seginit(1,0,n-1);
 		for(int index = 0 ; index < m + k ; index++) {
 			st = new StringTokenizer(br.readLine());
 			int a = Integer.parseInt(st.nextToken());
 			int b = Integer.parseInt(st.nextToken());
-			int c = Integer.parseInt(st.nextToken());
+			long c = Long.parseLong(st.nextToken());
 			if(a ==1) {
 				// update
 				int i = b-1;
@@ -30,12 +30,13 @@ public class 구간합구하기 {
 			}
 			else {
 				// compute sum
+				int cc = (int)c;
 				if(b > c) {
 					int temp = b;
-					b = c;
-					c= temp;
+					b = cc;
+					cc= temp;
 				}
-				System.out.println(sum(1,0,n-1,b-1,c-1));
+				System.out.println(sum(1,0,n-1,b-1,cc-1));
 			}
 			
 		}
